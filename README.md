@@ -91,11 +91,11 @@ Initialized empty Git repository in D:/workspace/git-learning/.git/
 
 
 
-## 添加文件至本地库
+## 添加文件至缓存区
 
-主要命令(添加文件至仓库)：**git add yourfile**
+主要命令(添加文件至缓存区)：**git add yourfile**
 
-辅助命令(查看当前仓库状态)：**git status**
+辅助命令(查看当前仓库/分支状态)：**git status**
 
 ```shell
 wj@localhost MINGW64 /d/workspace/git-learning (master)
@@ -134,7 +134,7 @@ Changes to be committed:
 
 
 
-## 提交文件至本地库
+## 提交缓存区文件至本地库
 
 命令：**git commit -m "本次提交说明"**
 
@@ -178,14 +178,51 @@ Total 3 (delta 0), reused 0 (delta 0)
 To https://github.com/bearPotMan/git-learning.git
  * [new branch]      master -> master
 Branch 'master' set up to track remote branch 'master' from 'origin'.
+
 ```
 
 
 
 以上就是最基本的第一次记录提交！
 
+
+
 之后的文件的修改与提交使用的命令主要有三个：
 
-- git add file：添加文件至缓存区
-- git commit -m "本次提交说明"：提交缓存区文件至本地仓库
-- git push -u origin master：推送本地仓库内容至远程仓库 master 分支
+- git add file
+- git commit -m "本次提交说明"
+- git push -u origin master
+
+
+
+# git 常用命令
+
+- **git status**：查看当前仓库/分支文件提交状态
+
+- **git checkout -- file**：撤销工作区的修改，在下一次 **add** 操作之前执行该命令才有效
+
+- **git add file**：添加文件至缓存区
+
+- **git reset HEAD file**：撤销缓存区的修改
+
+- **git commit -m "本次提交说明"**：提交缓存区文件至本地仓库
+
+- **git push -u origin master**：推送本地仓库内容至远程仓库 master 分支
+
+- **git branch**：查看当前分支
+
+- **git branch dev**：创建 dev 分支
+
+- **git checkout dev**：切换至 dev 分支
+
+- **git log**：查看提交历史记录
+
+- **git reflog**：查看命令历史记录
+
+- **git clone https://github.com/bearPotMan/git-learn**：克隆仓库
+
+- **git pull origin master:dev**：将远程 master 分支拉取到本地 dev 分支
+
+  ...
+
+其他命令后续用的比较熟练了再更新吧！
